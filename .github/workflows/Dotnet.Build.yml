@@ -28,5 +28,5 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: build-artifact
-          path: bin/Release/netcoreapp2.0
+          path: /home/runner/work/dotnet-hello-world/dotnet-hello-world/hello-world-api/bin/Release/netcoreapp2.0/
           
