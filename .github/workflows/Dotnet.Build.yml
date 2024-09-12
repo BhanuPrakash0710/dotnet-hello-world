@@ -1,0 +1,26 @@
+name: Dotnet.Build
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout the code
+        uses: actions/checkout@v2
+      
+      - name: Setup .NET core 2.0
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '2.0'
+      
+      - name: Restore Dependencies
+        run: dotnet restore
+      
+      - name: Dotnet Build
+        run: dotnet build -c Release --no-restore
+          
